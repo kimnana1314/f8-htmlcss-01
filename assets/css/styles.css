@@ -578,12 +578,16 @@ li {
     height: 28px;
     width: 28px;
     border-radius: 3px;
+    background: #f9f9f9;
 }
+.footer .social-link + .social-link {
+    margin-left: 16px;
+}
+
 .footer .social-link :hover {
     background-color: #ebebeb;
 }
-
-.footer .row-bottom {
+S .footer .row-bottom {
     margin-top: 81px;
     display: flex;
     align-items: center;
