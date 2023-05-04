@@ -598,7 +598,7 @@ li {
 .footer .social-link :hover {
     background-color: #ebebeb;
 }
-S .footer .row-bottom {
+.footer .row-bottom {
     margin-top: 81px;
     display: flex;
     align-items: center;
