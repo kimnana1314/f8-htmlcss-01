@@ -1,11 +1,23 @@
+:root {
+    --primary-color: #0f1b4c;
+}
 /* PC */
 @media screen and (min-width: 992px) {
+    .toggle-menu {
+        display: none;
+    }
+    .mobile-header {
+        display: none;
+    }
+    .show-on-mobile {
+        display: none;
+    }
 }
 
-/* tablet &mobile */
+/* tablet & mobile */
 @media screen and (max-width: 991px) {
     .navbar {
-        position: relative;  
+        position: relative;
     }
     .navbar .logo {
         position: absolute;
@@ -17,17 +29,141 @@
         display: none;
     }
     .toggle-menu svg {
-        width: 24px;
-        color: #fafa;
+        width: 25px;
+        color: var(--primary-color);
+    }
+    .menu-overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s ease;
+    }
+    .menu-drawer {
+        padding: 40px;
+        position: fixed;
+        inset: 0 40% 0 0;
+        background-color: #fff;
+        z-index: 2;
+        transform: translateX(-100%);
+        transition: 0.5s ease;
+    }
+    .menu-checkbox:checked ~ .menu-overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+    .menu-checkbox:checked ~ .menu-drawer {
+        transform: translateX(0);
+    }
+    .menu-drawer ul {
+        margin-top: 32px;
+    }
+    .menu-drawer ul a {
+        display: block;
+        padding: 14px 0;
+        color: #333;
+        font-weight: 500;
+    }
+    .separate {
+        border-top: 1.5px solid #ebebeb;
+    }
+    .hero-wrap .hero-img {
+        display: none;
+    }
+    .hero-wrap .info {
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .hero-wrap .desc {
+        width: 80%;
+        margin: 30px auto;
+    }
+    .clients .images {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .guides .list-guide {
+        justify-content: space-between;
+    }
+
+    .guide-item {
+        margin: 0 40px;
+    }
+    .featured .list {
+        flex-wrap: wrap;
+    }
+    .stats .row {
+        flex-direction: column;
+    }
+    .stats .img-block,
+    .stats .info {
+        width: 100%;
+    }
+    .stats .info {
+        padding: 79px 0;
+    }
+    .stats .sub-title {
+        width: 450px;
+    }
+    .stats .info .desc {
+        width: 95%;
+    }
+    .stats .row-qty {
+        flex-direction: row;
+        gap: 20px;
+    }
+    .subscription .image {
+        display: none;
     }
 }
 
 /* tablet */
 @media screen and (min-width: 768px) and (max-width: 991px) {
+    .show-on-mobile {
+        display: none;
+    }
 }
 
-/* Mobile */ 
+/* Mobile */
 @media screen and (max-width: 767px) {
-    
+    .actions {
+        display: none;
+    }
+    .menu-drawer {
+        inset: 0 25% 0 0;
+    }
+    .stats .sub-title {
+        width: 80%;
+    }
+
+    .stats .row-qty {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .stats .info .desc {
+        width: 100%;
+    }
+    .subscription .info {
+        padding: 0 20px;
+    }
+    .guides .list-guide {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .guide-item {
+        margin: 0 20px;
+    }
+    .stats .img-block .image {
+        width: 100%;
+    }
+    .hero-wrap .info {
+        width: 90%;
+        font-size: 4rem;
+    }
+    .hero-wrap .desc {
+        width: 90%;
+    }
 }
- 
